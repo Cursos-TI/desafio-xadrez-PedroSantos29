@@ -1,34 +1,44 @@
 #include <stdio.h>
 
-int main(){
-    int i;
+#define BISPO_MOV 5
+#define TORRE_MOV 5
+#define RAINHA_MOV 8
+#define CAVALO_MOV_X 2
+#define CAVALO_MOV_Y 1
 
-    printf("Movimento do Bispo:\n");
-   
-    // mover peça Bispo: 5 casas na diagonal superior direita (usando FOR)
-    for (i = 1; i < 6; i++)
-    {
-        printf("Diagonal superior direita - Passo %d\n", i); //Imprime a direção do movimento
+int main() {
+    // Movimentação do Bispo (Diagonal Superior Direita)
+    printf("Movimentação do Bispo:\n");
+    for (int i = 0; i < BISPO_MOV; i++) {
+        printf("Direita\n");
+        printf("Cima\n");
     }
-    printf("\n"); // Quebra Linha
+    printf("\n");
 
-    // Movimento da Torre - 5 casas para a direita (usando WHILE)
-    printf("Movimento da Torre:\n");
-    i = 1;
-    while (i <= 5) {
-        printf("Direita - Passo %d\n", i); //Imprime a direção do movimento
-        i++;
+    // Movimentação da Torre (Direita)
+    printf("Movimentação da Torre:\n");
+    for (int i = 0; i < TORRE_MOV; i++) {
+        printf("Direita\n");
     }
-    printf("\n"); // Quebra Linha
+    printf("\n");
 
-    // Movimento da Rainha - 8 casas para a esquerda (usando DO WHILE)
-    printf("Movimento da Rainha:\n");
-    i = 1;
-    do {
-        printf("Esquerda - Passo %d\n", i); //Imprime a direção do movimento
-        i++;
-    } while (i <= 8);
-    printf("\n"); // Quebra Linha
+    // Movimentação da Rainha (Esquerda)
+    printf("Movimentação da Rainha:\n");
+    for (int i = 0; i < RAINHA_MOV; i++) {
+        printf("Esquerda\n");
+    }
+    printf("\n");
 
+    // Movimentação do Cavalo em L (Baixo e Esquerda) com loops aninhados (FOR e WHILE) 
+    printf("Movimentação do Cavalo:\n");
+    for (int i = 0; i < CAVALO_MOV_X; i++) {
+        printf("Baixo\n");
+    }
+    int j = 0;
+    while (j < CAVALO_MOV_Y) {
+        printf("Esquerda\n");
+        j++;
+    }
+    
     return 0;
 }
